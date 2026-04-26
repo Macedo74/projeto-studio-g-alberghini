@@ -183,6 +183,86 @@ body {
   font-weight: 600;
 }
 
+/* --- SEÇÃO SOBRE --- */
+.sobre {
+    padding: 5rem 1rem;
+    background: var(--accent); /* Tom suave que você já tem */
+}
+
+.sobre-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+}
+
+.sobre-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem; /* Espaço entre foto e texto */
+}
+
+.sobre-foto-container {
+    flex: 0 0 45%; /* A foto ocupa 45% da largura */
+    display: flex;
+    justify-content: center;
+}
+
+.sobre-foto {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px; /* Bordas arredondadas suaves */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+    object-fit: cover;
+}
+
+.sobre-texto {
+    flex: 1;
+    text-align: left;
+}
+
+.sobre-texto h2 {
+    font-size: 2.2rem;
+    color: var(--neutral-dark);
+    margin-bottom: 1rem;
+}
+
+.sobre-texto p {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.subtitulo {
+    display: block;
+    color: var(--primary); /* Sua cor principal para destaque */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Responsividade para Celular */
+@media (max-width: 900px) {
+    .sobre-content {
+        flex-direction: column; /* Empilha foto e texto */
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .sobre-foto-container {
+        flex: 0 0 100%;
+        order: -1; /* Foto aparece antes do texto */
+    }
+
+    .sobre-texto {
+        text-align: center;
+    }
+
+    .sobre-texto h2 {
+        font-size: 1.8rem;
+    }
+}
+
 /* GALERIA */
 .galeria {
   padding: 3rem 1rem;

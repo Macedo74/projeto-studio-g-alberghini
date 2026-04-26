@@ -1,0 +1,355 @@
+:root {
+  --primary: #333333;
+  --primary-hover: #999999;
+  --accent: #f0f0f0;
+  --neutral-light: #ffffff;
+  --neutral-dark: #333333;
+  --font: 'Poppins', sans-serif;
+  --container: 1100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--neutral-dark);
+  background: var(--neutral-light);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* HEADER */
+.site-header {
+  background: var(--neutral-light);
+  border-bottom: 1px solid #eee;
+  position: relative;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+}
+
+.logo img {
+  display: block;
+  height: auto;
+  max-height: 150px;
+  width: auto;
+}
+
+.telefone-header {
+  text-decoration: none;
+  color: var(--neutral-dark);
+  font-weight: 400;
+  font-size: 1.0rem;
+  white-space: nowrap;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.telefone-header:hover {
+  color: var(--primary-hover);
+}
+
+.telefone-header i {
+  color: #25d366;
+  font-size: 1.4rem;
+  margin-right: 8px;
+}
+
+/* INSTAGRAM HEADER */
+.instagram-header {
+  text-decoration: none;
+  color: var(--neutral-dark);
+  font-weight: 400;
+  font-size: 1.0rem;
+  white-space: nowrap;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.instagram-header img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.instagram-header:hover {
+  color: var(--primary-hover);
+}
+
+.whatsapp-line {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--neutral-dark);
+  font-weight: 500;
+  transition: color 0.2s;
+  font-size: 1.2rem;
+}
+
+.main-nav a:hover {
+  color: var(--primary-hover);
+}
+
+/* HERO */
+.hero {
+  background: var(--accent);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  padding: .75rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  width: fit-content;
+  margin: 1rem auto 0;
+}
+
+/* SERVIÇOS */
+.servicos {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.servicos h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--primary);
+}
+
+.service-card h3 {
+  margin-bottom: .5rem;
+  color: var(--primary);
+}
+
+.price {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* GALERIA */
+.galeria {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Melhorei a responsividade aqui */
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 70vh;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.lightbox-close { top: 10px; right: 10px; }
+.lightbox-prev { top: 50%; left: 10px; transform: translateY(-50%); }
+.lightbox-next { top: 50%; right: 10px; transform: translateY(-50%); }
+
+/* CONTATO */
+.contato {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: var(--accent);
+}
+
+.FaleConoscoContainer {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.social-instagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.social-instagram img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.social-instagram a {
+  text-decoration: none;
+  color: var(--neutral-dark);
+  transition: color 0.2s;
+}
+
+.social-instagram a:hover {
+  color: var(--primary-hover);
+}
+
+.icone-pagamentos {
+  max-height: 24px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* FOOTER */
+.site-footer {
+  text-align: center;
+  padding-bottom: 2rem;
+  background: #f7f7f7;
+  font-size: 0.9rem;
+}
+
+.mapa-container iframe {
+  width: 100%;
+  height: 300px;
+}
+
+/* BOTÃO VOLTAR AO TOPO */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  transition: opacity 0.3s, transform 0.2s;
+  /* Centraliza o ícone */
+  align-items: center;
+  justify-content: center;
+}
+
+#backToTop:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.1);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .main-nav ul {
+    gap: 1rem;
+  }
+  .logo img {
+    max-height: 80px;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

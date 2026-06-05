@@ -292,6 +292,17 @@ body {
   border-radius: 10px;
   object-fit: cover;
   cursor: pointer;
+  /* ADICIONE ESSA LINHA: Garante que a foto aumente e ganhe sombra de forma bem suave */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* ADICIONE ESTE BLOCO NOVO LOGO ABAIXO */
+.gallery-grid img:hover {
+  /* Faz a foto crescer levemente (5% a mais do tamanho original) */
+  transform: scale(1.05);
+  
+  /* Adiciona uma sombra elegante em volta da foto para dar o efeito de "saltar aos olhos" */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* LIGHTBOX */

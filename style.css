@@ -170,6 +170,17 @@ body {
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--primary);
+  /* ADICIONE ESTA LINHA ABAIXO: Diz ao navegador para suavizar a animação */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* ADICIONE ESTE BLOCO NOVO LOGO ABAIXO */
+.service-card:hover {
+  /* Faz a caixa subir levemente 6 pixels, dando o efeito de flutuar/saltar */
+  transform: translateY(-6px);
+  
+  /* Deixa a sombra um pouco mais intensa e espalhada para dar profundidade real */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .service-card h3 {
